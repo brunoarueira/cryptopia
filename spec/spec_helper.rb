@@ -1,5 +1,8 @@
 require "bundler/setup"
+
 require "cryptopia"
+
+require "support/vcr_setup"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
