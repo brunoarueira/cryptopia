@@ -29,18 +29,18 @@ http_interactions:
       Server:
       - Microsoft-IIS/10.0
       Date:
-      - Sun, 17 Dec 2017 14:34:43 GMT
+      - Sun, 17 Dec 2017 17:00:39 GMT
       Set-Cookie:
-      - incap_ses_469_1244263=dTb9MOgYwVTOobsgMDmCBoOANloAAAAAqrwy6vRZp7dxyHEmDa+myw==;
+      - incap_ses_469_1244263=IsBpK/FLyBNXicsgMDmCBreiNloAAAAApeZ4N/kM8Q+qJX5eqYXV8A==;
         path=/; Domain=.cryptopia.co.nz
-      - nlbi_1244263=nX+PMdEMaE9v2Roz7zprsAAAAABFAfsdmTqFXO6HquDuDCO0; path=/; Domain=.cryptopia.co.nz
-      - visid_incap_1244263=c5MnFuwaQv2HkNCheh0qK4KANloAAAAAQUIPAAAAAADJxsUl/8OHhd3i9UqJhwa8;
+      - nlbi_1244263=ZcfvYkfTlFoQAi6q7zprsAAAAACPndNlLyIni/YL0BAX5N83; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=inb+z305SVyFvhOwEUD+XLWiNloAAAAAQUIPAAAAAADvSf2IFhK3Znc9nXmJHxZz;
         expires=Mon, 17 Dec 2018 14:09:33 GMT; path=/; Domain=.cryptopia.co.nz
       Strict-Transport-Security:
       - max-age=31536000
       X-Iinfo:
-      - 9-70720674-70720714 NNNN CT(82 74 0) RT(1513521282518 320) q(0 0 1 0) r(3
-        4) U2
+      - 5-45258103-45258117 NNNN CT(0 0 0) RT(1513530038645 286) q(0 0 0 0) r(1 1)
+        U2
       X-Cdn:
       - Incapsula
       Transfer-Encoding:
@@ -231,5 +231,5 @@ http_interactions:
         all transactions will continue as normal once this is complete. Please refrain
         from submitting a ticket, it''s all under control. ","TradeFee":0.20000000,"MinimumTrade":0.00000001,"MaximumTrade":100000000.0,"MinimumBaseTrade":10.00000000,"MaximumBaseTrade":100000000.0,"MinimumPrice":0.00000001,"MaximumPrice":100000000.0}],"Error":null}'
     http_version: 
-  recorded_at: Sun, 17 Dec 2017 14:34:44 GMT
+  recorded_at: Sun, 17 Dec 2017 17:00:40 GMT
 recorded_with: VCR 4.0.0

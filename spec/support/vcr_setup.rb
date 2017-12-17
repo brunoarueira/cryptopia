@@ -16,7 +16,7 @@ RSpec.configure do |config|
       VCR.turned_off(&example)
     else
       name = example
-             .metadata[:description]
+             .metadata[:full_description]
              .split(/\s+/, 2)
              .join('/')
              .gsub(/\./, '/')
