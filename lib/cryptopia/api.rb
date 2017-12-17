@@ -1,4 +1,5 @@
 require 'httparty'
+require 'cryptopia/api/markets'
 require 'cryptopia/api/public'
 
 module Cryptopia
@@ -9,9 +10,6 @@ module Cryptopia
 
       base_uri 'https://www.cryptopia.co.nz/api'
       format :json
-
-      def initialize()
-      end
     end
   end
 end
