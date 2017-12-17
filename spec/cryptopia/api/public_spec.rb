@@ -23,5 +23,29 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#trade_pairs' do
+      it 'returns all the trade pairs' do
+        result = subject.trade_pairs
+
+        expect(result["Data"][0]).to include({
+          "Id" => 4909,
+          "Label" => "BTC/USDT",
+          "Currency" => "Bitcoin",
+          "Symbol" => "BTC",
+          "BaseCurrency" => "Tether",
+          "BaseSymbol" => "USDT",
+          "Status" => "OK",
+          "StatusMessage" => nil,
+          "TradeFee" => 0.2,
+          "MinimumTrade" => 1.0e-08,
+          "MaximumTrade" => 100000000.0,
+          "MinimumBaseTrade" => 1.0,
+          "MaximumBaseTrade" => 100000000.0,
+          "MinimumPrice" => 1.0e-08,
+          "MaximumPrice" => 100000000.0
+        })
+      end
+    end
   end
 end
