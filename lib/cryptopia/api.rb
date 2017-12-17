@@ -1,5 +1,6 @@
 require 'httparty'
 require 'cryptopia/api/markets'
+require 'cryptopia/api/market'
 require 'cryptopia/api/public'
 
 module Cryptopia

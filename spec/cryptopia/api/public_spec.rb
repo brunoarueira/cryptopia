@@ -119,5 +119,53 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#market' do
+      it 'returns the specified market by trade pair with default params' do
+        result = subject.market('DOT_BTC')
+
+        expect(result["Data"][0]).to eq({
+          "TradePairId" => 1261,
+          "Label" => "$$$/BTC",
+          "AskPrice" => 1.3e-07,
+          "BidPrice" => 1.0e-07,
+          "Low" => 9.0e-08,
+          "High" => 1.2e-07,
+          "Volume" => 460664.60867905,
+          "LastPrice" => 1.2e-07,
+          "BuyVolume" => 18026045.65786899,
+          "SellVolume" => 19152018.65949742,
+          "Change" => 9.09,
+          "Open" => 1.1e-07,
+          "Close" => 1.2e-07,
+          "BaseVolume" => 0.05012609,
+          "BuyBaseVolume" => 0.33138836,
+          "SellBaseVolume" => 28951333.17017219
+        })
+      end
+
+      it 'return all markets with hours' do
+        result = subject.market('$$$_BTC', hours: 12)
+
+        expect(result["Data"][0]).to eq({
+          "TradePairId" => 1261,
+          "Label" => "$$$/BTC",
+          "AskPrice" => 1.3e-07,
+          "BidPrice" => 1.0e-07,
+          "Low" => 9.0e-08,
+          "High" => 1.2e-07,
+          "Volume" => 460664.60867905,
+          "LastPrice" => 1.2e-07,
+          "BuyVolume" => 18026045.65786899,
+          "SellVolume" => 19152018.65949742,
+          "Change" => 9.09,
+          "Open" => 1.1e-07,
+          "Close" => 1.2e-07,
+          "BaseVolume" => 0.05012609,
+          "BuyBaseVolume" => 0.33138836,
+          "SellBaseVolume" => 28951333.17017219
+        })
+      end
+    end
   end
 end
