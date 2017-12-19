@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.cryptopia.co.nz/api/GetMarket/$$$_BTC/12
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Tue, 19 Dec 2017 19:02:09 GMT
+      Set-Cookie:
+      - incap_ses_789_1244263=Eot1GE3jyWjbdH3BghfzCjFiOVoAAAAAhqf3ytW6OuupExy8dZ2TEQ==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=APvzIPVJjijfFrkN7zprsAAAAABnbvyWjuaA+5CroTxL+i+D; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=ieg2IS8oSUWiQ4O2MkrmLDFiOVoAAAAAQUIPAAAAAAB4zbElPEt7ODpjQbp103gn;
+        expires=Wed, 19 Dec 2018 09:36:47 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 12-87237659-87237861 NNNN CT(190 190 0) RT(1513710128033 1144) q(0 0 4 -1)
+        r(7 7) U2
+      X-Cdn:
+      - Incapsula
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Success":true,"Message":null,"Data":{"TradePairId":1261,"Label":"$$$/BTC","AskPrice":0.00000013,"BidPrice":0.00000012,"Low":0.00000013,"High":0.00000019,"Volume":722737.64407227,"LastPrice":0.00000013,"BuyVolume":19112381.23884413,"SellVolume":18259772.24586001,"Change":-7.14,"Open":0.00000014,"Close":0.00000013,"BaseVolume":0.11297315,"BuyBaseVolume":0.42804395,"SellBaseVolume":28944872.77743327},"Error":null}'
+    http_version: 
+  recorded_at: Tue, 19 Dec 2017 19:02:10 GMT
+recorded_with: VCR 4.0.0

@@ -10,23 +10,23 @@ module Cryptopia
       end
 
       def markets(options = {})
-        handle_response(Markets.new(self.class.base_uri).call(options))
+        handle_response(Market.new(self.class.base_uri).all(options))
       end
 
       def market(market, options = {})
-        handle_response(Market.new(self.class.base_uri).call(market, options))
+        handle_response(Market.new(self.class.base_uri).find(market, options))
       end
 
       def market_history(market, options = {})
-        handle_response(MarketHistory.new(self.class.base_uri).call(market, options))
+        handle_response(Market.new(self.class.base_uri).history(market, options))
       end
 
       def market_orders(market, options = {})
-        handle_response(MarketOrders.new(self.class.base_uri).call(market, options))
+        handle_response(Market.new(self.class.base_uri).orders(market, options))
       end
 
       def market_order_groups(markets = [], options = {})
-        handle_response(MarketOrderGroups.new(self.class.base_uri).call(markets, options))
+        handle_response(Market.new(self.class.base_uri).order_groups(markets, options))
       end
 
       private
