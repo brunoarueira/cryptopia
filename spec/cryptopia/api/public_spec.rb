@@ -245,5 +245,93 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#market_order_groups' do
+      it 'returns the specified market by trade pair with default params' do
+        result = subject.market_order_groups(['DOT_BTC', 101])
+
+        expect(result["Data"][0]["Buy"].size).to be <= 100
+        expect(result["Data"][1]["Buy"].size).to be <= 100
+
+				expect(result["Data"][0]["Market"]).to eq "DOT_BTC"
+        expect(result["Data"][0]["TradePairId"]).to eq 100
+
+				expect(result["Data"][1]["Market"]).to eq "LTC_BTC"
+        expect(result["Data"][1]["TradePairId"]).to eq 101
+      end
+
+      it 'return all markets with orderCount' do
+        result = subject.market_order_groups(['$$$_BTC', 'DOGE_BTC'], orderCount: 2)
+
+        expect(result["Data"][0]["Buy"].size).to be <= 50
+        expect(result["Data"][1]["Buy"].size).to be <= 50
+
+        expect(result["Data"][0]).to eq({
+          "Buy" => [{
+            "TradePairId" => 1261,
+            "Label" => "$$$_BTC",
+            "Price" => 1.4e-07,
+            "Volume" => 4160.90627423,
+            "Total" => 0.00058253
+          },
+          {
+            "TradePairId" => 1261,
+            "Label" => "$$$_BTC",
+            "Price" => 1.3e-07,
+            "Volume" => 9855.97995779,
+            "Total" => 0.00128128
+					}],
+					"Sell" => [{
+						"TradePairId" => 1261,
+						"Label" => "$$$_BTC",
+						"Price" => 1.9e-07,
+						"Volume" => 217310.13840932,
+						"Total" => 0.04128893
+					},
+					{
+						"TradePairId" => 1261,
+						"Label" => "$$$_BTC",
+						"Price" => 2.0e-07,
+						"Volume" => 423983.45297274,
+						"Total" => 0.08479669
+					}],
+					"TradePairId" => 1261,
+          "Market" => "$$$_BTC"
+        })
+
+        expect(result["Data"][1]).to eq({
+          "Market" => "DOGE_BTC",
+					"TradePairId" => 102,
+					"Buy" => [{
+						"TradePairId" => 102,
+						"Label" => "DOGE_BTC",
+						"Price" => 3.2e-07,
+						"Volume" => 5739386.07652615,
+						"Total" => 1.83660354
+					},
+					{
+						"TradePairId" => 102,
+						"Label" => "DOGE_BTC",
+						"Price" => 3.1e-07,
+						"Volume" => 9686915.63517929,
+						"Total" => 3.00294385
+					}],
+					"Sell" => [{
+						"TradePairId" => 102,
+						"Label" => "DOGE_BTC",
+						"Price" => 3.3e-07,
+						"Volume" => 5913626.91096027,
+						"Total" => 1.95149688
+					},
+					{
+						"TradePairId" => 102,
+						"Label" => "DOGE_BTC",
+						"Price" => 3.4e-07,
+						"Volume" => 1475247.10298184,
+						"Total" => 0.50158402
+					}]
+        })
+      end
+    end
   end
 end

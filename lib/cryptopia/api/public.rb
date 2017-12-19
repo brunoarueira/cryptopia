@@ -25,6 +25,10 @@ module Cryptopia
         handle_response(MarketOrders.new(self.class.base_uri).call(market, options))
       end
 
+      def market_order_groups(markets = [], options = {})
+        handle_response(MarketOrderGroups.new(self.class.base_uri).call(markets, options))
+      end
+
       private
 
       def handle_response(response)
