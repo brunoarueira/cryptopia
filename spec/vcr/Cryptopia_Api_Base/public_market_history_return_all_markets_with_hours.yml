@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.cryptopia.co.nz/api/GetMarketHistory/$$$_BTC/12
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Tue, 19 Dec 2017 12:15:45 GMT
+      Set-Cookie:
+      - incap_ses_685_1244263=dlx4dlE9VUE6si7aAZyBCfECOVoAAAAAEJc9rV0rTPGh4W0fjvgd0g==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=+TwkA8KJfWX/UFMV7zprsAAAAACp0V6HcT5VU/ygJndmb3x+; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=dotlTlSiSemGKozVYJNJFfACOVoAAAAAQUIPAAAAAAC9T4R9ZX083ymfToVkzOPj;
+        expires=Wed, 19 Dec 2018 09:16:48 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 12-81319639-81319892 NNNN CT(171 168 0) RT(1513685743674 1053) q(0 0 3 0)
+        r(5 5) U2
+      X-Cdn:
+      - Incapsula
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Success":true,"Message":null,"Data":[{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000013,"Amount":1990.25065790,"Total":0.00025873,"Timestamp":1513680586},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000013,"Amount":6666.00000000,"Total":0.00086658,"Timestamp":1513680586},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000016,"Amount":7265.18006872,"Total":0.00116243,"Timestamp":1513671720},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000016,"Amount":25000.00000000,"Total":0.00400000,"Timestamp":1513671720},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000016,"Amount":50000.00000000,"Total":0.00800000,"Timestamp":1513671720},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000016,"Amount":36233.99762046,"Total":0.00579744,"Timestamp":1513671720},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000016,"Amount":3211.58968358,"Total":0.00051385,"Timestamp":1513671720},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000016,"Amount":5000.00000000,"Total":0.00080000,"Timestamp":1513671720},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000015,"Amount":10630.72776953,"Total":0.00159461,"Timestamp":1513671618},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000015,"Amount":5798.00000000,"Total":0.00086970,"Timestamp":1513671593},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000015,"Amount":16407.82728842,"Total":0.00246117,"Timestamp":1513671593},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000015,"Amount":5000.00000000,"Total":0.00075000,"Timestamp":1513671593},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000015,"Amount":200000.00000000,"Total":0.03000000,"Timestamp":1513671593},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000015,"Amount":5000.00000000,"Total":0.00075000,"Timestamp":1513671593},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":9462.00000000,"Total":0.00132468,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":14257.19988594,"Total":0.00199601,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":5300.98410182,"Total":0.00074214,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":3600.00000000,"Total":0.00050400,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":3700.00000000,"Total":0.00051800,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":4241.51696607,"Total":0.00059381,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":4576.57843637,"Total":0.00064072,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":3700.00000000,"Total":0.00051800,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":16540.38138338,"Total":0.00231565,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":4430.00000000,"Total":0.00062020,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":10000.00000000,"Total":0.00140000,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":11080.33932136,"Total":0.00155125,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000014,"Amount":14111.46531742,"Total":0.00197561,"Timestamp":1513671577},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000012,"Amount":10100.00000000,"Total":0.00121200,"Timestamp":1513659543},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000012,"Amount":9331.49575490,"Total":0.00111978,"Timestamp":1513658855},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Buy","Price":0.00000013,"Amount":4000.00000000,"Total":0.00052000,"Timestamp":1513658802},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000012,"Amount":3574.31470393,"Total":0.00042892,"Timestamp":1513656638},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000012,"Amount":1425.68529607,"Total":0.00017108,"Timestamp":1513656638},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000012,"Amount":3574.31470393,"Total":0.00042892,"Timestamp":1513642871},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000012,"Amount":5240.68529607,"Total":0.00062888,"Timestamp":1513642871},{"TradePairId":1261,"Label":"$$$/BTC","Type":"Sell","Price":0.00000013,"Amount":35900.00000000,"Total":0.00466700,"Timestamp":1513642802}],"Error":null}'
+    http_version: 
+  recorded_at: Tue, 19 Dec 2017 12:15:46 GMT
+recorded_with: VCR 4.0.0

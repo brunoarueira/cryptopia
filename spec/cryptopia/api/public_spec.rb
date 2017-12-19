@@ -167,5 +167,35 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#market_history' do
+      it 'returns the specified market by trade pair with default params' do
+        result = subject.market_history('DOT_BTC')
+
+        expect(result["Data"][0]).to eq({
+          "Amount" => 37235.53955918,
+          "Label" => "DOT/BTC",
+          "Price" => 9.4e-07,
+          "Timestamp" => 1513685756,
+          "Total" => 0.03500141,
+          "TradePairId" => 100,
+          "Type" => "Buy"
+        })
+      end
+
+      it 'return all markets with hours' do
+        result = subject.market_history('$$$_BTC', hours: 12)
+
+        expect(result["Data"][0]).to eq({
+          "Amount" => 1990.2506579,
+          "Label" => "$$$/BTC",
+          "Price" => 1.3e-07,
+          "Timestamp" => 1513680586,
+          "Total" => 0.00025873,
+          "TradePairId" => 1261,
+          "Type" => "Sell"
+        })
+      end
+    end
   end
 end

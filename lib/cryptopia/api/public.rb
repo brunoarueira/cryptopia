@@ -24,6 +24,12 @@ module Cryptopia
 
         response.code == 200 ? response.to_h : {}
       end
+
+      def market_history(market, options = {})
+        response = MarketHistory.new(self.class.base_uri).call(market, options)
+
+        response.code == 200 ? response.to_h : {}
+      end
     end
   end
 end
