@@ -2,32 +2,32 @@ module Cryptopia
   module Api
     module Public
       def currencies
-        response = self.class.get('/GetCurrencies')
-
-        response.code == 200 ? response.to_h : {}
+        handle_response(self.class.get('/GetCurrencies'))
       end
 
       def trade_pairs
-        response = self.class.get('/GetTradePairs')
-
-        response.code == 200 ? response.to_h : {}
+        handle_response(self.class.get('/GetTradePairs'))
       end
 
       def markets(options = {})
-        response = Markets.new(self.class.base_uri).call(options)
-
-        response.code == 200 ? response.to_h : {}
+        handle_response(Markets.new(self.class.base_uri).call(options))
       end
 
       def market(market, options = {})
-        response = Market.new(self.class.base_uri).call(market, options)
-
-        response.code == 200 ? response.to_h : {}
+        handle_response(Market.new(self.class.base_uri).call(market, options))
       end
 
       def market_history(market, options = {})
-        response = MarketHistory.new(self.class.base_uri).call(market, options)
+        handle_response(MarketHistory.new(self.class.base_uri).call(market, options))
+      end
 
+      def market_orders(market, options = {})
+        handle_response(MarketOrders.new(self.class.base_uri).call(market, options))
+      end
+
+      private
+
+      def handle_response(response)
         response.code == 200 ? response.to_h : {}
       end
     end

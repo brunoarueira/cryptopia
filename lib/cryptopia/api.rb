@@ -2,6 +2,7 @@ require 'httparty'
 require 'cryptopia/api/markets'
 require 'cryptopia/api/market'
 require 'cryptopia/api/market_history'
+require 'cryptopia/api/market_orders'
 require 'cryptopia/api/public'
 
 module Cryptopia

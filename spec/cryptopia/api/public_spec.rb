@@ -197,5 +197,53 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#market_orders' do
+      it 'returns the specified market by trade pair with default params' do
+        result = subject.market_orders('DOT_BTC')
+
+        expect(result["Data"]["Buy"].size).to be <= 100
+        expect(result["Data"]["Sell"].size).to be <= 100
+
+        expect(result["Data"]["Buy"][0]).to eq({
+          "Label" => "DOT/BTC",
+          "Price" => 9.3e-07,
+          "Total" => 0.13946938,
+          "TradePairId" => 100,
+          "Volume" => 149967.08018592
+        })
+
+        expect(result["Data"]["Sell"][0]).to eq({
+          "Label" => "DOT/BTC",
+          "Price" => 9.4e-07,
+          "Total" => 0.50314864,
+          "TradePairId" => 100,
+          "Volume" => 535264.50830389
+        })
+      end
+
+      it 'return all markets with orderCount' do
+        result = subject.market_orders('$$$_BTC', orderCount: 50)
+
+        expect(result["Data"]["Buy"].size).to be <= 50
+        expect(result["Data"]["Sell"].size).to be <= 50
+
+        expect(result["Data"]["Buy"][0]).to eq({
+          "Label" => "$$$/BTC",
+          "Price" => 1.3e-07,
+          "Total" => 0.00024128,
+          "TradePairId" => 1261,
+          "Volume" => 1855.97995779
+        })
+
+        expect(result["Data"]["Sell"][0]).to eq({
+          "Label" => "$$$/BTC",
+          "Price" => 1.6e-07,
+          "Total" => 0.00249444,
+          "TradePairId" => 1261,
+          "Volume" => 15590.27394649
+        })
+      end
+    end
   end
 end
