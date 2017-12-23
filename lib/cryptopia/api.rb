@@ -10,6 +10,12 @@ module Cryptopia
 
       base_uri 'https://www.cryptopia.co.nz/api'
       format :json
+
+      private
+
+      def handle_response(response)
+        response.code == 200 ? response.to_h : {}
+      end
     end
   end
 end
