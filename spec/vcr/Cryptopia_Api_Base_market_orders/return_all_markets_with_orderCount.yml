@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.cryptopia.co.nz/api/GetMarketOrders/$$$_BTC/50
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Tue, 19 Dec 2017 19:02:22 GMT
+      Set-Cookie:
+      - incap_ses_789_1244263=xNRPMwT66FBOgX3BghfzCj9iOVoAAAAAbzxVgWDevB1QKno+GuE4mA==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=ekTFaBVuaVyybYOn7zprsAAAAAAuNE24TXZj+t8FZpZmPbwd; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=e61bd6BeSU+JkPgTuCbG1T9iOVoAAAAAQUIPAAAAAACTYQ7G3UGUDP8SLrehaKEZ;
+        expires=Wed, 19 Dec 2018 09:36:47 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 12-87240163-87240307 NNNN CT(171 171 0) RT(1513710141769 1058) q(0 0 3 -1)
+        r(8 8) U2
+      X-Cdn:
+      - Incapsula
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Success":true,"Message":null,"Data":{"Buy":[{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000012,"Volume":77525.16425840,"Total":0.00930302},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000011,"Volume":261163.21901651,"Total":0.02872795},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000010,"Volume":422277.38559229,"Total":0.04222774},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000009,"Volume":203756.16302476,"Total":0.01833805},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000008,"Volume":113330.25199601,"Total":0.00906642},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000007,"Volume":260403.47875677,"Total":0.01822824},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000006,"Volume":331586.17952636,"Total":0.01989517},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000005,"Volume":765729.78452838,"Total":0.03828649},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000004,"Volume":1045752.24950100,"Total":0.04183009},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000003,"Volume":1032999.34065202,"Total":0.03098998},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000002,"Volume":1584971.22558815,"Total":0.03169942},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000001,"Volume":12850195.01197605,"Total":0.12850195}],"Sell":[{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000013,"Volume":1070.31835742,"Total":0.00013914},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000019,"Volume":204930.00503164,"Total":0.03893670},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000020,"Volume":428646.45297274,"Total":0.08572929},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000021,"Volume":61630.77453152,"Total":0.01294246},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000022,"Volume":94628.89221557,"Total":0.02081836},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000023,"Volume":54970.89791996,"Total":0.01264331},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000024,"Volume":144419.00000000,"Total":0.03466056},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000025,"Volume":208280.82600371,"Total":0.05207021},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000026,"Volume":27098.67619767,"Total":0.00704566},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000027,"Volume":10167.66562545,"Total":0.00274527},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000028,"Volume":110325.33241506,"Total":0.03089109},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000029,"Volume":244614.32323991,"Total":0.07093815},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000030,"Volume":328224.79923793,"Total":0.09846744},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000031,"Volume":59972.79845071,"Total":0.01859157},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000032,"Volume":188355.01145069,"Total":0.06027360},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000033,"Volume":3899.41220449,"Total":0.00128681},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000034,"Volume":61976.79321264,"Total":0.02107211},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000035,"Volume":188861.25000651,"Total":0.06610144},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000036,"Volume":100141.20770071,"Total":0.03605083},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000037,"Volume":514599.50890239,"Total":0.19040182},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000038,"Volume":60134.46972530,"Total":0.02285110},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000039,"Volume":22345.20171322,"Total":0.00871463},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000040,"Volume":178886.26463709,"Total":0.07155451},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000041,"Volume":16159.56756757,"Total":0.00662542},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000042,"Volume":582.21115663,"Total":0.00024453},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000043,"Volume":76049.95848525,"Total":0.03270148},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000044,"Volume":317973.23892157,"Total":0.13990823},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000045,"Volume":101805.56476075,"Total":0.04581250},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000046,"Volume":2250.00000000,"Total":0.00103500},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000047,"Volume":12263.51661656,"Total":0.00576385},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000048,"Volume":4462.89141017,"Total":0.00214219},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000049,"Volume":56667.86950702,"Total":0.02776726},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000050,"Volume":285418.42018347,"Total":0.14270921},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000051,"Volume":2420.29411765,"Total":0.00123435},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000052,"Volume":11990.59398749,"Total":0.00623511},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000053,"Volume":53367.01617724,"Total":0.02828452},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000054,"Volume":2896.98270015,"Total":0.00156437},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000055,"Volume":21745.14731576,"Total":0.01195983},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000056,"Volume":500.00000000,"Total":0.00028000},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000057,"Volume":5000.00000000,"Total":0.00285000},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000058,"Volume":156.25013240,"Total":0.00009063},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000059,"Volume":17604.36270317,"Total":0.01038657},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000060,"Volume":180923.56811309,"Total":0.10855414},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000061,"Volume":2000.00000000,"Total":0.00122000},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000063,"Volume":31170.00000000,"Total":0.01963710},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000064,"Volume":79965.01247505,"Total":0.05117761},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000065,"Volume":1010501.23076923,"Total":0.65682580},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000066,"Volume":5973414.18993854,"Total":3.94245337},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000067,"Volume":25123.74986760,"Total":0.01683291},{"TradePairId":1261,"Label":"$$$/BTC","Price":0.00000068,"Volume":6800.00000000,"Total":0.00462400}]},"Error":null}'
+    http_version: 
+  recorded_at: Tue, 19 Dec 2017 19:02:24 GMT
+recorded_with: VCR 4.0.0
