@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.cryptopia.co.nz/Api/GetBalance
+    body:
+      encoding: UTF-8
+      string: '{"Currency":"BTC"}'
+    headers:
+      Authorization:
+      - amx <API_KEY>:l6uz7ooSbvZ03X3zKYMjg4fFKi9V3G739XYTAVTd3cQ=:1514081238
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Sun, 24 Dec 2017 02:07:21 GMT
+      Content-Length:
+      - '262'
+      Set-Cookie:
+      - incap_ses_469_1244263=l3GUHgpE7HisDSUlMDmCBtkLP1oAAAAAGWDRVtVGaHRPQXhbihdweg==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=535/LQYIn26WJZxi7zprsAAAAAB3UumRe5vfFb3y7NPoG4Sw; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=YLvuczT0SSCLehvOZGolu9kLP1oAAAAAQUIPAAAAAAAYOOaSnCSpN4MExVhdQiAm;
+        expires=Sun, 23 Dec 2018 14:09:52 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 7-77520276-77520296 NNNN CT(0 0 0) RT(1514081240968 262) q(0 0 0 -1) r(1 1)
+        U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"Success":true,"Error":null,"Data":[{"CurrencyId":1,"Symbol":"BTC","Total":0.00069673,"Available":0.00069673,"Unconfirmed":0.00000000,"HeldForTrades":0.00000000,"PendingWithdraw":0.00000000,"Address":null,"Status":"OK","StatusMessage":null,"BaseAddress":null}]}'
+    http_version:
+  recorded_at: Sun, 24 Dec 2017 02:07:21 GMT
+recorded_with: VCR 4.0.0

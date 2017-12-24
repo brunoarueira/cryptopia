@@ -6,6 +6,9 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
   # your HTTP request service. You can also use fakeweb, webmock, and more
   c.hook_into :webmock
+
+  c.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
+  c.filter_sensitive_data('<API_SECRET>') { ENV['API_SECRET'] }
 end
 
 RSpec.configure do |config|
