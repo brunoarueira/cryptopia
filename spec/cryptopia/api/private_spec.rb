@@ -29,5 +29,21 @@ RSpec.describe Cryptopia::Api::Base do
         })
 			end
     end
+
+    describe '#deposit_address' do
+      it 'creates or returns a deposit address for the specified currency' do
+        result = subject.deposit_address(Currency: 'DOT')
+
+        expect(result).to eq({
+					"Success" => true,
+					"Error" => nil,
+					"Data" => {
+						"Currency" => "DOT",
+						"Address" => "0x2b9db4ed225d927109c2b053e70c87506f661ead",
+						"BaseAddress" => nil
+					}
+        })
+      end
+    end
   end
 end

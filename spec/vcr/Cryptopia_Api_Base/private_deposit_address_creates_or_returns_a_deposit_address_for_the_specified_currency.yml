@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.cryptopia.co.nz/Api/GetDepositAddress
+    body:
+      encoding: UTF-8
+      string: '{"Currency":"DOT"}'
+    headers:
+      Authorization:
+      - amx <API_KEY>:HX3mFdhxKcfllKhfSYp1QWweeFllW8yd9bFQOXe8lCA=:1514082685
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Sun, 24 Dec 2017 02:31:31 GMT
+      Content-Length:
+      - '129'
+      Set-Cookie:
+      - incap_ses_469_1244263=K7aAGHsY3TY/syclMDmCBoMRP1oAAAAAgrE2xAQ/wG200+QPxYGI/A==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=ssM4Jotl9FwiNa517zprsAAAAACojCFlbYnTZm+WtTZZqS1n; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=IiqPEx7KTCK5PHlZvJB7rYMRP1oAAAAAQUIPAAAAAAAo+3T+kh7SpqdD61eFCZy1;
+        expires=Sun, 23 Dec 2018 14:09:42 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 2-23883912-23883918 NNNN CT(127 124 0) RT(1514082685020 261) q(0 0 3 -1) r(65
+        65) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"Success":true,"Error":null,"Data":{"Currency":"DOT","Address":"0x2b9db4ed225d927109c2b053e70c87506f661ead","BaseAddress":null}}'
+    http_version: 
+  recorded_at: Sun, 24 Dec 2017 02:31:32 GMT
+recorded_with: VCR 4.0.0

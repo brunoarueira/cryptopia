@@ -10,6 +10,7 @@ module Cryptopia
 
       AVAILABLE_PARAMS = {
         balance: [:Currency, :CurrencyId],
+        deposit_address: [:Currency, :CurrencyId],
       }
 
       def initialize(api_key = nil, api_secret = nil)
@@ -24,6 +25,16 @@ module Cryptopia
           end
 
           handle_response(auth_post('/GetBalance', options))
+        end
+      end
+
+      def deposit_address(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:deposit_address, options)
+            raise ArgumentError, "Arguments must be #{params(:deposit_address)}"
+          end
+
+          handle_response(auth_post('/GetDepositAddress', options))
         end
       end
 
