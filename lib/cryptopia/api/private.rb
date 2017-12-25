@@ -11,6 +11,11 @@ module Cryptopia
       AVAILABLE_PARAMS = {
         balance: [:Currency, :CurrencyId],
         deposit_address: [:Currency, :CurrencyId],
+        open_orders: [:Market, :TradePairId]
+      }
+
+      OPTIONAL_PARAMS = {
+        open_orders: [:Count]
       }
 
       def initialize(api_key = nil, api_secret = nil)
@@ -36,7 +41,17 @@ module Cryptopia
 
           handle_response(auth_post('/GetDepositAddress', options))
         end
-      end
+			end
+
+			def open_orders(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:deposit_address, options)
+            raise ArgumentError, "Arguments must be #{params(:deposit_address)}"
+          end
+
+          handle_response(auth_post('/GetOpenOrders', options))
+        end
+			end
 
       private
 
@@ -105,7 +120,9 @@ module Cryptopia
       def invalid_params?(endpoint, options = {})
         return false if options.keys.length.zero?
 
-        (options.keys - AVAILABLE_PARAMS[endpoint]).length == 1
+        required_keys = options.keys - AVAILABLE_PARAMS[endpoint]
+        required_keys.length == 1 &&
+          OPTIONAL_PARAMS.key?(endpoint) && (OPTIONAL_PARAMS[endpoint] - required_keys) >= 1
       end
 
       def params(endpoint)

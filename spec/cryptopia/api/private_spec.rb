@@ -45,5 +45,17 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#open_orders' do
+      it 'returns a list of open orders for all tradepairs or specified tradepair' do
+        result = subject.open_orders(Market: 'DOT/BTC')
+
+        expect(result).to eq({
+          "Success" => true,
+          "Error" => nil,
+          "Data" => []
+        })
+      end
+    end
   end
 end
