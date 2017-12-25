@@ -12,7 +12,8 @@ module Cryptopia
         balance: [:Currency, :CurrencyId],
         deposit_address: [:Currency, :CurrencyId],
         open_orders: [:Market, :TradePairId],
-        trade_history: [:Market, :TradePairId]
+        trade_history: [:Market, :TradePairId],
+        transactions: [:Type]
       }
 
       OPTIONAL_PARAMS = {
@@ -61,6 +62,20 @@ module Cryptopia
           end
 
           handle_response(auth_post('/GetTradeHistory', options))
+        end
+      end
+
+      def transactions(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:transactions, options)
+            raise ArgumentError, "Arguments must be #{params(:transactions)}"
+          end
+
+          if invalid_transaction_type?(options)
+            raise ArgumentError, "Type must be 'Deposit' or 'Withdraw'"
+          end
+
+          handle_response(auth_post('/GetTransactions', options))
         end
       end
 
@@ -126,6 +141,12 @@ module Cryptopia
 
       def nonce
         @nonce ||= Time.now.to_i.to_s
+      end
+
+      def invalid_transaction_type?(options)
+        return false if options.keys.length.zero?
+
+        options.key?(:Type) && (options[:Type] != 'Deposit' && options[:Type] != 'Withdraw')
       end
 
       def invalid_params?(endpoint, options = {})

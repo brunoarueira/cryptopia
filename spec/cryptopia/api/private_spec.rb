@@ -69,5 +69,24 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#transactions' do
+      it 'returns a list of transactions' do
+        result = subject.transactions(Type: 'Deposit')
+
+        expect(result["Data"][0]).to eq({
+          "Id" => 7844778,
+          "Currency" => "BCH",
+          "TxId" => "0000000000000000011865af4122fe3b144e2cbeea86142e8ff2fb4107352d43",
+          "Type" => "Deposit",
+          "Amount" => 0.00045035,
+          "Fee" => 0.0,
+          "Status" => "Confirmed",
+          "Confirmations" => 6,
+          "Timestamp" => "2017-08-01T16:19:24",
+          "Address" => nil
+        })
+      end
+    end
   end
 end
