@@ -57,5 +57,17 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#trade_history' do
+      it 'returns a list of trade history for all tradepairs or specified tradepair' do
+        result = subject.trade_history(Market: 'DOT/BTC')
+
+        expect(result).to eq({
+          "Success" => true,
+          "Error" => nil,
+          "Data" => []
+        })
+      end
+    end
   end
 end

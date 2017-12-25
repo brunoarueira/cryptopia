@@ -11,7 +11,8 @@ module Cryptopia
       AVAILABLE_PARAMS = {
         balance: [:Currency, :CurrencyId],
         deposit_address: [:Currency, :CurrencyId],
-        open_orders: [:Market, :TradePairId]
+        open_orders: [:Market, :TradePairId],
+        trade_history: [:Market, :TradePairId]
       }
 
       OPTIONAL_PARAMS = {
@@ -52,6 +53,16 @@ module Cryptopia
           handle_response(auth_post('/GetOpenOrders', options))
         end
 			end
+
+      def trade_history(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:trade_history, options)
+            raise ArgumentError, "Arguments must be #{params(:trade_history)}"
+          end
+
+          handle_response(auth_post('/GetTradeHistory', options))
+        end
+      end
 
       private
 
