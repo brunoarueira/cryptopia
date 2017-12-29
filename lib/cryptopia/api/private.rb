@@ -143,11 +143,11 @@ module Cryptopia
       def hmacsignature
         hmac = OpenSSL::HMAC.digest(
           OpenSSL::Digest.new('sha256'),
-          Base64.decode64(api_secret),
+          Base64.strict_decode64(api_secret),
           signature
         )
 
-        Base64.encode64(hmac).strip
+        Base64.strict_encode64(hmac).strip
       end
 
       def signature
@@ -163,7 +163,7 @@ module Cryptopia
       def hashed_post_params
         md5 = Digest::MD5.new.digest(options.to_s)
 
-        Base64.encode64(md5)
+        Base64.strict_encode64(md5)
       end
 
       def nonce
