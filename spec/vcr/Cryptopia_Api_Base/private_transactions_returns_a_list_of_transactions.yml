@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.cryptopia.co.nz/Api/GetTransactions
+    body:
+      encoding: UTF-8
+      string: '{"Type":"Deposit"}'
+    headers:
+      Authorization:
+      - amx <API_KEY>:J9mwZdraHWNM3PxeNwzwiM5i7zetLzfEPdWHxJJO/Bs=:1514231807
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Mon, 25 Dec 2017 19:56:49 GMT
+      Content-Length:
+      - '2223'
+      Set-Cookie:
+      - incap_ses_685_1244263=nYLFf79msgKDbLreAZyBCQFYQVoAAAAA0lJ8j2z9AI3xFI4mIpUUCQ==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=7sJwSQ/WBEGBwoub7zprsAAAAAABQoBWp7rWifIxCgKv6QKx; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=HN3i+MdlTueJ7u4r2SSJFABYQVoAAAAAQUIPAAAAAACmmIYnMc8m6b1gGAIMWjce;
+        expires=Tue, 25 Dec 2018 09:16:54 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 13-185094117-185094225 NNNN CT(178 181 0) RT(1514231808162 653) q(0 0 3 0)
+        r(6 6) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"Success":true,"Error":null,"Data":[{"Id":7844778,"Currency":"BCH","TxId":"0000000000000000011865af4122fe3b144e2cbeea86142e8ff2fb4107352d43","Type":"Deposit","Amount":0.00045035,"Fee":0.0,"Status":"Confirmed","Confirmations":6,"Timestamp":"2017-08-01T16:19:24","Address":null},{"Id":5829966,"Currency":"IMS","TxId":"1f9e8b91966e853ea8cf847178a20cef4927973f9c04c412c430cbbdbea6d816","Type":"Deposit","Amount":7.17667000,"Fee":0.0,"Status":"Confirmed","Confirmations":20,"Timestamp":"2017-06-03T19:42:10","Address":null},{"Id":5825955,"Currency":"XRA","TxId":"2f18b814f15666ac8d01b24ffcb206b8b1c10bab402f69021b2122d470e7edd2","Type":"Deposit","Amount":7.27567000,"Fee":0.0,"Status":"Confirmed","Confirmations":20,"Timestamp":"2017-06-03T16:02:29","Address":null},{"Id":5825939,"Currency":"1337","TxId":"5e954ebeb0731e9806a9b2ae2bca0c4039487332b9ff8555fa30f7c16ca30b67","Type":"Deposit","Amount":485.36741000,"Fee":0.0,"Status":"Confirmed","Confirmations":25,"Timestamp":"2017-06-03T16:02:57","Address":null},{"Id":5825797,"Currency":"808","TxId":"a730770e12686301964e994f8f7565624706a6c50fa25535d63fc4d18a326b73","Type":"Deposit","Amount":25.51180100,"Fee":0.0,"Status":"Confirmed","Confirmations":21,"Timestamp":"2017-06-03T15:55:04","Address":null},{"Id":3773455,"Currency":"POST","TxId":"2c43c7d51cc43d56769534932bc876029d40ecf4445b4d04129e1ac686e10747","Type":"Deposit","Amount":3.65865105,"Fee":0.0,"Status":"Confirmed","Confirmations":11,"Timestamp":"2016-12-17T01:51:42","Address":null},{"Id":3720404,"Currency":"CBD","TxId":"00e7e66291635c17742b8a3b564a65477c988b04c83bdef92fc6a3220498a892","Type":"Deposit","Amount":477.56698887,"Fee":0.0,"Status":"Confirmed","Confirmations":8,"Timestamp":"2016-12-08T23:34:10","Address":null},{"Id":3717406,"Currency":"SWING","TxId":"f68a3275a4e79d90090f77f7a7552d9ccfa63d4cb72160466b5df9df02fcf6ce","Type":"Deposit","Amount":0.36200000,"Fee":0.0,"Status":"Confirmed","Confirmations":11,"Timestamp":"2016-12-08T13:06:41","Address":null},{"Id":3574150,"Currency":"DOT","TxId":"4e865f84834d74d1ca6c0b636e1fa5a1bd23ab018f6a953430058f25210555ca","Type":"Deposit","Amount":0.00175498,"Fee":0.0,"Status":"Confirmed","Confirmations":15,"Timestamp":"2016-11-14T19:16:54","Address":null}]}'
+    http_version: 
+  recorded_at: Mon, 25 Dec 2017 19:56:50 GMT
+recorded_with: VCR 4.0.0
