@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Cryptopia::Api::Base do
-  subject do
-    described_class.new(ENV['API_KEY'], ENV['API_SECRET'])
-  end
+  subject { described_class.new(ENV['API_KEY'], ENV['API_SECRET']) }
 
   context 'private' do
     describe '#balance' do
@@ -85,6 +83,22 @@ RSpec.describe Cryptopia::Api::Base do
           "Confirmations" => 6,
           "Timestamp" => "2017-08-01T16:19:24",
           "Address" => nil
+        })
+      end
+    end
+
+    describe '#submit_trade' do
+      it 'submits a new trade order' do
+        result = subject.submit_trade(
+          Market: 'DOT/BTC',
+          Type: 'Buy',
+          Rate: 0.00000034,
+          Amount: 123.00000000
+        )
+
+        expect(result["Data"]).to eq({
+          "OrderId" => 23467,
+          "FilledOrders" => [44310, 44311]
         })
       end
     end

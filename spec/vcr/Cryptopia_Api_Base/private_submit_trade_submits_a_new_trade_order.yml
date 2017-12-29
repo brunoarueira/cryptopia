@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.cryptopia.co.nz/Api/SubmitTrade
+    body:
+      encoding: UTF-8
+      string: '{"Market":"DOT/BTC","Type":"Buy","Rate":3.4e-07,"Amount":123.0}'
+    headers:
+      Authorization:
+      - amx <API_KEY>:16ItVbrulIFAh70GRVum0VNnYSpx3R9WVEb17zeqgV0=:1514563901
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Fri, 29 Dec 2017 16:11:43 GMT
+      Content-Length:
+      - '99'
+      Set-Cookie:
+      - incap_ses_789_1244263=CdSCOFvzGkZYWfbGghfzCj9pRloAAAAArIXP12pMPQqEYrINNdCqkQ==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=8DqVdIU8+UtRX8wB7zprsAAAAACLWTGGzfTU9Ae57iCLyDt9; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=6nHlVEF2Q/WJvlzkBaeuXPpoRloAAAAAQUIPAAAAAACyGg47s8RNGJKsbXmqqTKd;
+        expires=Sat, 29 Dec 2018 09:37:00 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 9-93652292-93652335 NNNN CT(179 380 0) RT(1514563901913 616) q(0 0 5 1) r(8
+        8) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"Success":true, "Error":null, "Data": { "OrderId": 23467, "FilledOrders": [44310,44311] }}'
+    http_version:
+  recorded_at: Fri, 29 Dec 2017 16:11:43 GMT
+recorded_with: VCR 4.0.0

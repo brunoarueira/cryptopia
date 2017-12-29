@@ -13,11 +13,16 @@ module Cryptopia
         deposit_address: [:Currency, :CurrencyId],
         open_orders: [:Market, :TradePairId],
         trade_history: [:Market, :TradePairId],
-        transactions: [:Type]
+        transactions: [:Type],
+        submit_trade: [:Market, :TradePairId]
       }
 
       OPTIONAL_PARAMS = {
         open_orders: [:Count]
+      }
+
+      EXACT_PARAMS = {
+        submit_trade: [:Type, :Rate, :Amount]
       }
 
       def initialize(api_key = nil, api_secret = nil)
@@ -76,6 +81,16 @@ module Cryptopia
           end
 
           handle_response(auth_post('/GetTransactions', options))
+        end
+      end
+
+      def submit_trade(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:submit_trade, options, true)
+            raise ArgumentError, "Arguments must be #{params(:submit_trade)}"
+          end
+
+          handle_response(auth_post('/SubmitTrade', options))
         end
       end
 
@@ -149,12 +164,20 @@ module Cryptopia
         options.key?(:Type) && (options[:Type] != 'Deposit' && options[:Type] != 'Withdraw')
       end
 
-      def invalid_params?(endpoint, options = {})
+      def invalid_params?(endpoint, options = {}, exact = false)
         return false if options.keys.length.zero?
 
-        required_keys = options.keys - AVAILABLE_PARAMS[endpoint]
-        required_keys.length == 1 &&
-          OPTIONAL_PARAMS.key?(endpoint) && (OPTIONAL_PARAMS[endpoint] - required_keys) >= 1
+        available_keys = options.keys - AVAILABLE_PARAMS[endpoint]
+        available_keys.length == 1 &&
+          (
+            OPTIONAL_PARAMS.key?(endpoint) &&
+            (OPTIONAL_PARAMS[endpoint] - available_keys) >= 1
+          ) &&
+          (
+            exact &&
+            EXACT_PARAMS.key?(endpoint) &&
+            EXACT_PARAMS[endpoint]
+          )
       end
 
       def params(endpoint)
