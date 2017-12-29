@@ -14,7 +14,8 @@ module Cryptopia
         open_orders: [:Market, :TradePairId],
         trade_history: [:Market, :TradePairId],
         transactions: [:Type],
-        submit_trade: [:Market, :TradePairId]
+        submit_trade: [:Market, :TradePairId],
+        cancel_trade: [:OrderId, :TradeId]
       }
 
       OPTIONAL_PARAMS = {
@@ -22,7 +23,8 @@ module Cryptopia
       }
 
       EXACT_PARAMS = {
-        submit_trade: [:Type, :Rate, :Amount]
+        submit_trade: [:Type, :Rate, :Amount],
+        cancel_trade: [:Type]
       }
 
       def initialize(api_key = nil, api_secret = nil)
@@ -91,6 +93,16 @@ module Cryptopia
           end
 
           handle_response(auth_post('/SubmitTrade', options))
+        end
+      end
+
+      def cancel_trade(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:cancel_trade, options, true)
+            raise ArgumentError, "Arguments must be #{params(:cancel_trade)}"
+          end
+
+          handle_response(auth_post('/CancelTrade', options))
         end
       end
 

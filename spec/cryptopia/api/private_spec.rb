@@ -102,5 +102,16 @@ RSpec.describe Cryptopia::Api::Base do
         })
       end
     end
+
+    describe '#cancel_trade' do
+      it 'cancels a single order, all orders for a tradepair or all open orders' do
+        result = subject.cancel_trade(
+          Type: 'Trade',
+          OrderId: 23467
+        )
+
+        expect(result["Data"]).to eq([44310, 44311])
+      end
+    end
   end
 end

@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.cryptopia.co.nz/Api/CancelTrade
+    body:
+      encoding: UTF-8
+      string: '{"Type":"Trade","OrderId":23467}'
+    headers:
+      Authorization:
+      - amx <API_KEY>:MCYYlMCpJJ7yOHLQdaX8oE/msoUTf103BSnKKU/mg9Y=:1514569603
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/10.0
+      Date:
+      - Fri, 29 Dec 2017 17:47:18 GMT
+      Content-Length:
+      - '67'
+      Set-Cookie:
+      - incap_ses_298_1244263=hdjwB53hEQOXHkpJCrciBKd/RloAAAAA9CzZIzpy6HGb08grX2QEPQ==;
+        path=/; Domain=.cryptopia.co.nz
+      - nlbi_1244263=Dcx4Ehr1gzQBkZXF7zprsAAAAAD4DZPHxW5aMZ+xhc1LaLI0; path=/; Domain=.cryptopia.co.nz
+      - visid_incap_1244263=Sf/gK1RLQtu08iCQz5UYzFN/RloAAAAAQUIPAAAAAACpNYp4kahTmCe48mG+4HdV;
+        expires=Sat, 29 Dec 2018 09:07:45 GMT; path=/; Domain=.cryptopia.co.nz
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Iinfo:
+      - 5-155460168-155460183 NNNN CT(0 0 0) RT(1514569604478 159) q(0 0 0 0) r(352
+        352) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"Success":true,"Error":null,"Data":[44310, 44311]}'
+    http_version:
+  recorded_at: Fri, 29 Dec 2017 17:47:18 GMT
+recorded_with: VCR 4.0.0
