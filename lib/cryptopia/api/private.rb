@@ -167,7 +167,7 @@ module Cryptopia
       end
 
       def nonce
-        @nonce ||= Time.now.to_i.to_s
+        @nonce ||= (Time.now.to_f * 100).to_i
       end
 
       def invalid_transaction_type?(options)
