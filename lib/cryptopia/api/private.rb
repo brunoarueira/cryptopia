@@ -118,13 +118,19 @@ module Cryptopia
         @url = self.class.base_uri + endpoint
         @options = options.to_json
 
-        self.class.post(
+        response = self.class.post(
           endpoint,
           body: @options,
           headers: {
             'Authorization' => "amx #{authorization_formatted_value}",
             'Content-Type' => 'application/json'
           })
+
+        # Nonce should be reset after each request to avoid
+        # "Nonce has already been used for this request." error
+        @nonce = nil
+
+        response
       end
 
       def keys_is_not_present?
