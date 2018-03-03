@@ -16,7 +16,8 @@ module Cryptopia
         transactions: [:Type],
         submit_trade: [:Market, :TradePairId],
         cancel_trade: [:OrderId, :TradeId],
-        submit_withdraw: [:CurrencyId, :Currency]
+        submit_withdraw: [:CurrencyId, :Currency],
+        submit_transfer: [:CurrencyId, :Currency]
       }
 
       OPTIONAL_PARAMS = {
@@ -26,7 +27,8 @@ module Cryptopia
       EXACT_PARAMS = {
         submit_trade: [:Type, :Rate, :Amount],
         cancel_trade: [:Type],
-        submit_withdraw: [:Address, :Amount]
+        submit_withdraw: [:Address, :Amount],
+        submit_transfer: [:Username, :Amount]
       }
 
       def initialize(api_key = nil, api_secret = nil)
@@ -115,6 +117,16 @@ module Cryptopia
           end
 
           handle_response(auth_post('/SubmitWithdraw', options))
+        end
+      end
+      
+      def submit_transfer(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:submit_transfer, options, true)
+            raise ArgumentError, "Arguments must be #{params(:submit_transfer)}"
+          end
+
+          handle_response(auth_post('/SubmitTransfer', options))
         end
       end
 
