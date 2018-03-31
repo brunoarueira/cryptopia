@@ -15,7 +15,9 @@ module Cryptopia
         trade_history: [:Market, :TradePairId],
         transactions: [:Type],
         submit_trade: [:Market, :TradePairId],
-        cancel_trade: [:OrderId, :TradeId]
+        cancel_trade: [:OrderId, :TradeId],
+        submit_withdraw: [:CurrencyId, :Currency],
+        submit_transfer: [:CurrencyId, :Currency]
       }
 
       OPTIONAL_PARAMS = {
@@ -24,7 +26,9 @@ module Cryptopia
 
       EXACT_PARAMS = {
         submit_trade: [:Type, :Rate, :Amount],
-        cancel_trade: [:Type]
+        cancel_trade: [:Type],
+        submit_withdraw: [:Address, :Amount],
+        submit_transfer: [:Username, :Amount]
       }
 
       def initialize(api_key = nil, api_secret = nil)
@@ -50,9 +54,9 @@ module Cryptopia
 
           handle_response(auth_post('/GetDepositAddress', options))
         end
-			end
+      end
 
-			def open_orders(options = {})
+      def open_orders(options = {})
         for_uri(Private::ENDPOINT) do
           if invalid_params?(:deposit_address, options)
             raise ArgumentError, "Arguments must be #{params(:deposit_address)}"
@@ -60,7 +64,7 @@ module Cryptopia
 
           handle_response(auth_post('/GetOpenOrders', options))
         end
-			end
+      end
 
       def trade_history(options = {})
         for_uri(Private::ENDPOINT) do
@@ -106,6 +110,26 @@ module Cryptopia
         end
       end
 
+      def submit_withdraw(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:submit_withdraw, options, true)
+            raise ArgumentError, "Arguments must be #{params(:submit_withdraw)}"
+          end
+
+          handle_response(auth_post('/SubmitWithdraw', options))
+        end
+      end
+      
+      def submit_transfer(options = {})
+        for_uri(Private::ENDPOINT) do
+          if invalid_params?(:submit_transfer, options, true)
+            raise ArgumentError, "Arguments must be #{params(:submit_transfer)}"
+          end
+
+          handle_response(auth_post('/SubmitTransfer', options))
+        end
+      end
+
       private
 
       attr_reader :api_key, :api_secret, :url, :options
@@ -135,7 +159,7 @@ module Cryptopia
 
       def keys_is_not_present?
         (api_key.nil? || (!api_key.nil? && api_key == '')) ||
-         (api_secret.nil? || (!api_secret.nil? && api_secret == ''))
+          (api_secret.nil? || (!api_secret.nil? && api_secret == ''))
       end
 
       def authorization_formatted_value
@@ -173,7 +197,7 @@ module Cryptopia
       end
 
       def nonce
-        @nonce ||= Time.now.to_i.to_s
+        @nonce ||= (Time.now.to_f * 100).to_i
       end
 
       def invalid_transaction_type?(options)
@@ -190,12 +214,12 @@ module Cryptopia
           (
             OPTIONAL_PARAMS.key?(endpoint) &&
             (OPTIONAL_PARAMS[endpoint] - available_keys) >= 1
-          ) &&
-          (
-            exact &&
-            EXACT_PARAMS.key?(endpoint) &&
-            EXACT_PARAMS[endpoint]
-          )
+        ) &&
+        (
+          exact &&
+          EXACT_PARAMS.key?(endpoint) &&
+          EXACT_PARAMS[endpoint]
+        )
       end
 
       def params(endpoint)
