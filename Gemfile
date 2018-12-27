@@ -6,5 +6,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 group :test do
-  gem "webmock", "3.4.2"
+  gem "webmock", "3.5.1"
 end
