@@ -1,5 +1,9 @@
 # Cryptopia
 
+# ANNOUNCEMENT
+
+See ()[https://github.com/brunoarueira/cryptopia/issues/1#issuecomment-496508157]
+
 This is a crytopia's api wrapper gem. This gem implements all the public api
 (see https://www.cryptopia.co.nz/Forum/Thread/255) and part of the private api
 (see #5).
